@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ayou.mapper.EmployeeMapper">
+    <select id="selectEmployee" resultType="Employee">
+        select *
+        from employee
+        where id = #{id}
+    </select>
+    <insert id="insertEmployee" parameterType="Employee" keyProperty="id" useGeneratedKeys="true">
+        insert into employee(name, age, position) VALUES (#{name},#{age},#{position})
+    </insert>
+    <update id="updateEmployee" parameterType="Employee">
+        update employee set name = #{name}, age = #{age}, position = #{position} where id = ${id}
+    </update>
+    <delete id="deleteEmployee" parameterType="Integer">
+        delete from employee where id = #{id}
+    </delete>
+</mapper>
