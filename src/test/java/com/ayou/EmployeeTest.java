@@ -15,8 +15,7 @@ import org.junit.Test;
 import java.io.InputStream;
 import java.util.function.BiConsumer;
 
-public class MybatisTest {
-    SqlSessionFactory sqlSessionFactory;
+public class EmployeeTest {
 
     @SneakyThrows
     @Before
@@ -26,6 +25,7 @@ public class MybatisTest {
         this.sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
     }
 
+    SqlSessionFactory sqlSessionFactory;
     @Test
     public void getEmployee() {
         this.openSession(((session, employeeMapper) -> {
@@ -34,11 +34,6 @@ public class MybatisTest {
         }));
     }
 
-    private void openSession(BiConsumer<SqlSession, EmployeeMapper> sessionConsumer) {
-        @Cleanup SqlSession session = sqlSessionFactory.openSession();
-        EmployeeMapper mapper = session.getMapper(EmployeeMapper.class);
-        sessionConsumer.accept(session, mapper);
-    }
 
     @Test
     public void updateEmployee() {
@@ -68,5 +63,11 @@ public class MybatisTest {
             session.commit();
             Assert.assertEquals(1, i);
         }));
+    }
+
+    private void openSession(BiConsumer<SqlSession, EmployeeMapper> sessionConsumer) {
+        @Cleanup SqlSession session = sqlSessionFactory.openSession();
+        EmployeeMapper mapper = session.getMapper(EmployeeMapper.class);
+        sessionConsumer.accept(session, mapper);
     }
 }
