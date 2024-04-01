@@ -30,4 +30,6 @@ public class Student {
     private String name;
     private String code;
     private String major;
+    private Integer cid;
+    private Integer age;
 }

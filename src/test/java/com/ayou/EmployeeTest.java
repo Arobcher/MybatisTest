@@ -43,6 +43,7 @@ public class EmployeeTest {
             int updateEmployee = mapper.updateEmployee(employee);
             session.commit();
             Assert.assertEquals(1, updateEmployee);
+            Assert.assertEquals(21, employee.getAge());
         });
     }
 
