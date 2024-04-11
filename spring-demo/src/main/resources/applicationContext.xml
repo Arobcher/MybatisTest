@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="zhangsan" class="com.ayou.pojo.User">
+        <property name="name" value="张三"/>
+        <property name="message" value="Spring框架的初衷是使Java EE开发应该更加简单。"/>
+    </bean>
+
+    <bean id="lisi" class="com.ayou.pojo.User">
+        <property name="name" value="李四"/>
+        <property name="message" value="Spring框架的控制反转，也称为依赖注入，是面向对象编程中的一种设计理念，可用来降低程序代码之间的耦合度。"/>
+    </bean>
+
+</beans>
