@@ -3,7 +3,10 @@ package com.ayou;
 import com.ayou.printer.Ink;
 import com.ayou.printer.Size;
 import com.ayou.printer.SmallPrinter;
+import lombok.SneakyThrows;
 import org.junit.Test;
+
+import java.net.URLEncoder;
 
 public class PrinterTest {
     @Test
