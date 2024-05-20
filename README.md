@@ -4,6 +4,13 @@
 ### AOP
 - [LogAspect](spring-demo/src/main/java/com/ayou/aop/LogAspect.java)
 - [UserService](spring-demo/src/main/java/com/ayou/service/UserService.java)
+### JDBCTemplate
+- [JDBCTemplateTest](spring-demo/src/test/java/com/ayou/JdbcTemplateTest.java)
+- [DatasourceConfig](spring-demo/src/main/java/com/ayou/config/DatasourceConfig.java)
+### RESTful Student
+- [StudentController](spring-demo/src/main/java/com/ayou/controller/StudentController.java)
+- [StudentService](spring-demo/src/main/java/com/ayou/service/StudentService.java)
+- [rest-http-test](spring-demo/src/test/rest-test.http)
 
 
 ### PrinterDemo
